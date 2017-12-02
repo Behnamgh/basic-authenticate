@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+    <style>
+        body         { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.email) { %>
+                    <p>
+
+                        <strong>email</strong>: <%= user.email %><br>
+                        <strong>email verification</strong>: <%= user.verifii %>
+
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+                <section id="vvv">
+              <p>your email verified</p>
+                </section>
+                  <span class="tog" id="tog">
+                 <a href="/send" class="btn btn-info" id="send" type="action">verify email</a>
+              </span>
+
+            </div>
+        </div>
+        <div id="wroted" class="col-sm-6">
+          <div class="jumbotron">
+            <form action="/wrote" method="post">
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" class="form-control" placeholder="Enter subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label>letter</label>
+                    <textarea rows="4" cols="50" class="form-control" name="letter" placeholder="Dear future me"></textarea>
+                </div>
+                <input type="date" id="date" name="date">
+
+                <button type="submit" class="btn btn-warning btn-lg" padding-top:10px>Send</button>
+            </form>
+          </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="text-center">
+        <p><a href="/">go to Home</a>.</p>
+
+    </div>
+
+</div>
+<script>
+$( document ).ready(function() {
+    var aaa = <%= user.verifii %>
+console.log(aaa);
+if (aaa == true) {
+    //document.getElementById("tog").innerHTML = "<a href="/send" id="send" type="action">verify email</a>";
+    $("#tog").hide();
+} else {
+  $("#vvv").hide();
+
+  $("#wroted").hide();
+}
+$('#send').click(function(){
+    $('#send').hide();
+});
+$(document).ready(function() {
+    var date = new Date();
+
+    var day = date.getDate();
+    var month = date.getMonth() + 2;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    $("#date").attr("value", today);
+});
+});
+
+</script>
+</body>
+</html>

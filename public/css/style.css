@@ -1,0 +1,41 @@
+body{
+  background-color: #09F;
+}
+#welcome-title {
+  direction: rtl;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  padding-right: 10px;
+  background-color: white;
+  padding-top: 10px;
+}
+
+.total-body , .container{
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  padding-right: 10px;
+  background-color: white;
+}
+
+.col-md-6{
+  direction: rtl;
+  text-align: right;
+  border: dashed;
+  padding-bottom: 20px;
+}
+.p2em{
+  font-size: 1.5em;
+}
+#footer{
+  width: 100%;
+
+}
+#footer.container{
+  width: 80%;
+  border-color: #09F;
+padding: 5px;
+  border-style: double;
+  margin: auto;
+}

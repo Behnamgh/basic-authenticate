@@ -1,16 +1,21 @@
 // load the things we need
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt   = require('bcrypt-nodejs');
+
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
 
-    user: {
-        email: String,
-        password: String
-    }
+        user: {
+          verifii : {type:Boolean, default: false},
+                email: String,
+                password: String
+            }
+
 
 });
+
+
 
 // generating a hash
 userSchema.methods.generateHash = function(password) {

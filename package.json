@@ -1,26 +1,23 @@
 {
-  "name": "ayandeyeman2",
-  "version": "2.0.0",
-  "description": "ayandeyeman.ir",
-  "main": "server.js",
+  "name": "AyandeyemanT",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "behnamgh/ayandeyeman-v2.git"
-  },
-  "author": "BehnamG",
-  "license": "ISC",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "express-flash": "0.0.2",
-    "express-session": "^1.15.6",
-    "mongoose": "^4.1.2",
-    "morgan": "^1.9.0",
+    "bcrypt-nodejs": "latest",
+    "body-parser": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "cron": "^1.0.9",
+    "ejs": "~0.8.5",
+    "express": "~4.0.0",
+    "express-session": "~1.0.0",
+    "method-override": "~1.0.0",
+    "mongoose": "^4.13.5",
+    "morgan": "~1.0.0",
+    "nodemailer": "~0.7.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   }
